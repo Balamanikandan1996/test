@@ -18,7 +18,7 @@ pipeline {
 		} 
 	    stage ('Deploy') {
 		    steps {
-                echo 'Deploy stage is success'
+                echo 'Deploy stage is successful'
             }
 		}		
             stage ('Monitor') {
