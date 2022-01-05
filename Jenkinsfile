@@ -1,31 +1,15 @@
 pipeline {
     agent any
 	stages {
-	    stage ('Build') {
-		    steps {
-                echo 'Build stage is success'
-            }
-		}  
-	    stage ('Test') {
-		    steps {
-                echo 'Test stage is success'
-            }
-		} 		
-	    stage ('QA') {
-		    steps {
-                echo 'QA stage is success'
-            }
-		} 
-	    stage ('Deploy') {
-		    steps {
-                echo 'Deploy stage is successful'
-            }
-		}		
-            stage ('Monitor') {
-                    steps {
-                echo 'Monitor is success'
-            }
-                }
-
+	    stage ('Build and Deployment') {
+	        steps {
+                   echo 'Build stage is success'
+                   script {
+                      sh '''
+                         docker-compose up --build -d
+                         '''
+                   }
+               }
+            }  
 	}
 }
