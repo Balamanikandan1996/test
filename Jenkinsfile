@@ -19,7 +19,7 @@ pipeline {
 			 sh '''
                             sudo docker-compose down --rm all
                          '''      
-			 echo 'stage is successfully destroyed"
+			 echo 'stage is successfully destroyed'
 		      }	      
                    }
                }
